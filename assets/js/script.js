@@ -15,3 +15,5 @@
 
 // I want to save timeblock info to localStorage 
     // I want an alert message to display "I just saved to localStorage" on save click
+
+$('#currentDay').text(moment().format('[Today\'s Date: ]dddd, MMMM Do, YYYY'));
