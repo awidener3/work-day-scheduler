@@ -18,7 +18,7 @@ textarea {
   background-color: transparent;
   color: black;
   border-radius: 0;
-  border-bottom: 10px solid black;
+  /* border-bottom: 10px solid black; */
 }
 
 .description {
@@ -67,9 +67,15 @@ textarea {
   color: white;
 }
 
-.saveBtn i:hover {
+.saveBtn:hover {
+  background-color: #0cc6f0;
   font-size: 20px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s;
+}
+
+.saveBtn:active,
+.custom-btn:active {
+  background-color: #067e99;
 }
 
 #currentDay {
