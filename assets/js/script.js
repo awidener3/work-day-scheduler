@@ -1,11 +1,12 @@
 let timeBlockRows = $('.row');
 let textArea = $('textarea');
-// let currentTime = moment().format('ha');
-let currentTime = '10am';
+let currentTime = Number(moment().format('H'));
 
-// live current day div
+
+// -------- CURRENT DAY -------- \\
 $('#currentDay').text(moment().format('[Today\'s Date: ]dddd, MMMM Do, YYYY'));
 
+// -------- TIME BLOCK RENDERING -------- \\
 $(function renderTextArea() {
     timeBlockRows.each(function (i) {
         let rowText = $(this).children('textarea');
@@ -22,9 +23,19 @@ $(function renderTextArea() {
         }
 
         rowText.val(storedText);
-    })
+        return;
+    });
+
+    if (currentTime < 9) {
+        // set background to gray if before 9 AM
+        $('.container').find('textarea').addClass('future');
+
+    } else if (currentTime > 17) {
+        $('.container').find('textarea').addClass('past');
+    }
 });
 
+// -------- ROW SAVE BUTTON --------\\
 $('.saveBtn').on('click', function () {
     let textArea = $(this).siblings('textarea').val();
     let rowIndex = $(this).parent().data('index');
