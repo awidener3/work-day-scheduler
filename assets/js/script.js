@@ -18,36 +18,38 @@
 
 
 
-
-
-let scheduleDescriptions = [];
 let timeBlockRows = $('.row');
 let textArea = $('textarea');
 
+// live current day div
 $('#currentDay').text(moment().format('[Today\'s Date: ]dddd, MMMM Do, YYYY'));
 
-function renderTextArea() {
-    scheduleDescriptions = JSON.parse(localStorage.getItem('descriptions'));
+$(function renderTextArea() {
 
-    if (scheduleDescriptions === null) {
-        scheduleDescriptions = [];
-    }
+    timeBlockRows.each(function(i) {
+        let rowText = $(this).children('textarea');
+        let storedText = JSON.parse(localStorage.getItem('row ' + i))
 
-    timeBlockRows.each(function() {
-        // I want each row to be assigned text from the DB based on it's index
+        if (storedText === null) {
+            return;
+        }
 
-        
-
-        console.log($(this).data('index'));
+        rowText.val(storedText.text);
     })
-}
+});
 
 $('.saveBtn').on('click', function() {
-    // let textArea = $(this).siblings('textarea').val();
-    // let rowIndex = $(this).parent().data('index');
-    // let saveButton = $(this);
+    let textArea = $(this).siblings('textarea').val();
+    let rowIndex = $(this).parent().data('index');
+    let saveButton = $(this);
 
-    // console.log(textArea);
-    // console.log(rowIndex);
-    // console.log(saveButton);
+    let rowInfo = {
+        "text": textArea,
+        "index": rowIndex
+    }
+    localStorage.setItem('row ' + rowIndex, JSON.stringify(rowInfo));
+
+    console.log(textArea);
+    console.log(rowIndex);
+    console.log(saveButton);
 })
