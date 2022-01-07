@@ -4,8 +4,7 @@ $('#currentDay').text(moment().format('[Today\'s Date: ]dddd, MMMM Do, YYYY'));
 // -------- TIME BLOCK RENDERING -------- \\
 $(function renderTextArea() {
     let timeBlockRows = $('.row');
-    // let currentTime = Number(moment().format('H'));
-    let currentTime = 12;
+    let currentTime = Number(moment().format('H'));
 
     timeBlockRows.each(function (i) {
         let rowText = $(this).children('textarea');
