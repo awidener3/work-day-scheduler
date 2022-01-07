@@ -1,2 +1,36 @@
-# work-day-scheduler
-This project is a homework assignment from the UCF Coding Bootcamp. In this assignment, I am tasked with creating a daily work scheduler that allows the user to input tasks for each work day hour, which is then saved to the localStorage database. The application will be created with jQuery, and dynamic dates and times will use the moment.js API.
+# 📝 Homework Assignment #4: Work Day Planner
+
+📌[Link to Live Website](https://awidener3.github.io/work-day-scheduler/)
+
+## 🔨 Task
+To create a work-day planner that uses third-party API's such as jQuery, moment.js, and Bootstrap. Parts of the application will change dynamically depending on the current time and day. The planner should also be able to save any tasks entered into the text area fields to local storage.
+
+## 📎 How to Use
+Once you've opened the application, click on any text area to the right of the hour you wish to create a task. Then, type out the task that you want and click the save button on the end of the row.
+
+## 🔍 Preview
+![A gif of the planner in action!](assets/images/work-day-scheduler-preview.gif)
+
+## 📝 User Story
+```md
+AS AN employee with a busy schedule
+I WANT to add important events to a daily planner
+SO THAT I can manage my time effectively
+```
+
+## 💡 Acceptance Criteria
+```md
+GIVEN I am using a daily planner to create a schedule
+WHEN I open the planner
+THEN the current day is displayed at the top of the calendar
+WHEN I scroll down
+THEN I am presented with timeblocks for standard business hours
+WHEN I view the timeblocks for that day
+THEN each timeblock is color coded to indicate whether it is in the past, present, or future
+WHEN I click into a timeblock
+THEN I can enter an event
+WHEN I click the save button for that timeblock
+THEN the text for that event is saved in local storage
+WHEN I refresh the page
+THEN the saved events persist
+```
